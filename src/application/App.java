@@ -17,6 +17,9 @@ public class App {
 		
 		System.out.println("Enter your password and hit return.");
 		
+		/* scanner itself isn't getting the input.  It's scanning
+		 * System.in for the input
+		 */
 		Scanner scanner = new Scanner(System.in);
 		String userInput = scanner.nextLine();
 		scanner.close();
