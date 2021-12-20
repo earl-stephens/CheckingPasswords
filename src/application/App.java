@@ -17,6 +17,11 @@ public class App {
 		 * the user types the wrong password
 		 */
 
+		/*
+		 * Third coding challenge: Only ask for the password three times. If all three
+		 * attempts are wrong, exit and output that the account is locked.
+		 */
+
 		final String STORED_PASSWORD = "secure";
 
 		System.out.println("Enter your password and hit return.");
@@ -27,7 +32,8 @@ public class App {
 		Scanner scanner = new Scanner(System.in);
 		// String userInput = scanner.nextLine();
 
-		while (true) {
+		int counter = 1;
+		while (counter < 4) {
 
 			String userInput = scanner.nextLine();
 
@@ -36,6 +42,10 @@ public class App {
 				break;
 			} else {
 				System.out.println("Incorrect password.  Enter your password and hit return.");
+				counter++;
+				if (counter == 4) {
+					System.out.println("Account locked.  See administrator.");
+				}
 			}
 
 		}
